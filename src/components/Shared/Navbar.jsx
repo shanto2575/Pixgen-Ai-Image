@@ -41,7 +41,7 @@ const Navbar = () => {
           {isPending ? (
             <span className="loading loading-infinity loading-md text-accent"></span>
           )
-            : user ? <div className="flex items-center justify-between gap-4">
+            : user ? <div className="flex flex-col lg:flex-row  items-center justify-center gap-4">
               <p>Hi , {user.name}</p>
               <Image
                 src={user.image || avater}
