@@ -7,6 +7,10 @@ const nextConfig = {
         protocol: 'https',
         hostname: '**',
       },
+    ], 
+    domains: [
+      "lh3.googleusercontent.com", // Google ছবি
+      "avatars.githubusercontent.com" // Github ছবি
     ],
   },
 };

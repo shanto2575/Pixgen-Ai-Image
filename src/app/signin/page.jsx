@@ -6,7 +6,8 @@ import { Button, Description, FieldError, Form, Input, Label, TextField } from "
 import Link from "next/link";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { FaEye, FaEyeSlash, FaGithub, FaGoogle } from "react-icons/fa";
+import { FcGoogle } from "react-icons/fc";
 
 const SignInPage = () => {
     const [showPassword, setshowPassword] = useState(false)
@@ -24,8 +25,26 @@ const SignInPage = () => {
             rememberMe: true,
             callbackURL: "/",
         });
-        console.log({ res, error }, 'data and error')
+        // console.log({ res, error }, 'data and error')
+        if(error){
+            alert(error.message)
+        }
+        if(res){
+            alert('SignIn Successful')
+        }
     }
+
+    const handleGoogleSignIn = async () => {
+        const data = await authClient.signIn.social({
+            provider: "google",
+        });
+        console.log(data,'google data')
+    }
+    const handleGithubSignIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "github"
+    })
+}
 
     return (
         <div className="flex justify-center items-center h-[45vh]">
@@ -87,6 +106,25 @@ const SignInPage = () => {
                     </Button>
                 </div>
                 <p className="text-center">Dont Have any Acount ? <Link href={'/signup'} className="text-blue-500 font-semibold">Register</Link></p>
+                <p className="text-center">Or</p>
+                <div className="space-y-3">
+                    {/* Google Login */}
+                    <Button
+                        variant="outline"
+                        className="w-full hover:border-blue-600"
+                        onClick={handleGoogleSignIn}
+                    >
+                        Continue with <FcGoogle className="ml-2" /> Google
+                    </Button>
+                    {/* Github Login */}
+                    <Button
+                        variant="outline"
+                        className="w-full hover:border-blue-600"
+                        onClick={handleGithubSignIn}
+                    >
+                        Continue with <FaGithub className="ml-2" /> Github
+                    </Button>
+                </div>
             </Form>
         </div>
     )
