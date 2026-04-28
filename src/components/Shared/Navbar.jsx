@@ -4,6 +4,7 @@ import Link from "next/link";
 import avater from '../../../asset/avater.jpg'
 import { authClient } from "@/lib/auth-client";
 import { Button } from "@heroui/react";
+import NavLink from "./NavLink";
 
 const Navbar = () => {
   const { data: session, isPending, } = authClient.useSession()
@@ -26,16 +27,13 @@ const Navbar = () => {
 
         <ul className="flex items-center gap-5 text-sm">
           <li>
-            <Link href={"/"}>Home</Link>
+            <NavLink href={"/"}>Home</NavLink>
           </li>
           <li>
-            <Link href={"/all-photo"}>All Photos</Link>
+            <NavLink href={"/all-photo"}>All Photos</NavLink>
           </li>
           <li>
-            <Link href={"/pricing"}>Pricing</Link>
-          </li>
-          <li>
-            <Link href={"/profile"}>Profile</Link>
+            <NavLink href={"/profile"}>Profile</NavLink>
           </li>
         </ul>
 
@@ -50,7 +48,7 @@ const Navbar = () => {
                 height={400}
                 width={400}
                 alt="avater"
-                className="w-8 h-8 rounded-full"
+                className="w-8 h-8 object-cover rounded-full"
               />
               <Button className='rounded' onClick={async () => await authClient.signOut()}>Log Out</Button>
             </div>

@@ -16,17 +16,24 @@ const UserProfilePage = () => {
 
     return (
         <div className='flex flex-col items-center justify-center gap-4 h-[60vh]'>
-            <Card className='border rounded-2xl p-5 text-center'>
-                <Image
-                    src={user?.image || avater}
-                    width={400}
-                    height={400}
-                    alt={user?.name}
-                    className='w-[400px] h-[400px] rounded-full object-cover'
-                />
-                <h2>Name : {user?.name}</h2>
+            <Card className='border rounded-2xl p-5 text-center space-y-4'>
+
+                {/* image wrapper */}
+                <div className='relative w-[400px] h-[400px] mx-auto'>
+                    <Image
+                        src={user?.image || avater}
+                        fill
+                        sizes="200px"
+                        alt={user?.name}
+                        className='rounded object-contain'
+                    />
+                </div>
+
+                <h2 className='text-xl font-bold'>Name : {user?.name}</h2>
                 <p>Email : {user?.email}</p>
-                <UpdateUser/>
+
+                <UpdateUser />
+
             </Card>
         </div>
     )
