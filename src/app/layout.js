@@ -17,14 +17,14 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${OutFItFont.className}  h-full antialiased`}
+      className={`${OutFItFont.className} h-full antialiased`}
     >
-      <body >
-        <Navbar/>
-        <main className="max-w-7xl mx-auto">
+      <body className="min-h-screen flex flex-col">
+        <Navbar />
+        <main className="max-w-7xl mx-auto flex-1 w-full">
           {children}
         </main>
-        <Footer/>
+        <Footer />
       </body>
     </html>
   );

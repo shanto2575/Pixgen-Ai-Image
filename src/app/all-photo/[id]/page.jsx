@@ -36,7 +36,7 @@ const PhotoDetails = async ({ params }) => {
                     <Card.Description>
                         Prompt :{prompt}
                     </Card.Description>
-                    <Link href={`/all-photo`}> <CloseButton aria-label="Close banner" className="absolute top-3 right-3" /></Link>
+                    <Link href={`/all-photo`}> <CloseButton aria-label="Close banner" className="absolute top-3 right-3 text-red-700" /></Link>
                 </Card.Header>
             </div>
         </Card>
