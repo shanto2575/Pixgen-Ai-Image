@@ -1,13 +1,14 @@
 import { Button, Card, Chip, Separator } from '@heroui/react';
 import Image from 'next/image'
+import Link from 'next/link';
 import React from 'react'
 import { FaHeart } from 'react-icons/fa';
 import { GoDownload } from 'react-icons/go';
 
-
-const TopGenerationsCard = ({ photo }) => {
-    const { title, imageUrl, prompt, category, likes, downloads, tags } = photo;
+const AllPhotosCard = ({ photo }) => {
+    const {id, title, imageUrl, prompt, category, likes, downloads, tags } = photo;
     return (
+
         <Card className='border rounded-2xl p-5 space-y-4'>
             <div className='relative w-full aspect-square'>
                 <Image
@@ -25,9 +26,9 @@ const TopGenerationsCard = ({ photo }) => {
                 <Separator orientation='vertical' />
                 <p className='flex gap-3 items-center'><GoDownload />{downloads} K</p>
             </div>
-            <Button variant='outline' className='w-full my-2 text-md font-semibold hover:bg-purple-900 hover:text-white'>View</Button>
+            <Link href={`/all-photo/${id}`}> <Button variant='outline' className='w-full my-2 text-md font-semibold hover:bg-purple-900 hover:text-white'>View</Button></Link>
         </Card>
     )
 }
 
-export default TopGenerationsCard
+export default AllPhotosCard
