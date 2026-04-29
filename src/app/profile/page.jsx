@@ -25,7 +25,7 @@ const UserProfilePage = () => {
                         fill
                         sizes="200px"
                         alt={user?.name}
-                        className='rounded object-contain'
+                        className='rounded-full object-contain'
                     />
                 </div>
 

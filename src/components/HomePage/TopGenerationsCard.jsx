@@ -23,9 +23,9 @@ const TopGenerationsCard = ({ photo }) => {
                 </div>
                 <h2 className='text-xl font-bold'>{title}</h2>
                 <div className='flex justify-between items-center my-2 text-xl'>
-                    <p className='flex gap-3 items-center'><FaHeart />{likes}K</p>
+                    <p className='flex gap-3 items-center text-pink-500'><FaHeart />{likes}K</p>
                     <Separator orientation='vertical' />
-                    <p className='flex gap-3 items-center'><GoDownload />{downloads} K</p>
+                    <p className='flex gap-3 items-center text-green-600'><GoDownload />{downloads} K</p>
                 </div>
                 <Link href={`/all-photo/${id}`}> <Button variant='outline' className='w-full my-2 text-md font-semibold hover:bg-purple-900 hover:text-white'>View</Button></Link>
             </Card>

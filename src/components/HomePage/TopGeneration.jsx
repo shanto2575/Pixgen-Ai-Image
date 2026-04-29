@@ -7,7 +7,7 @@ import { Button } from '@heroui/react';
 
 const TopGeneration = async () => {
     const photo = await getData();
-    console.log(photo)
+    // console.log(photo)
     return (
         <div>
             <h2 className='text-2xl font-bold mt-12'>Top Generations</h2>
